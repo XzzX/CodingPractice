@@ -1,0 +1,1 @@
+add_exercise( LongestCommonSubsequence LongestCommonSubsequence.cpp )
