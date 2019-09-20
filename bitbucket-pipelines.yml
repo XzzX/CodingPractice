@@ -1,0 +1,23 @@
+# This is a sample build configuration for C++ – Make.
+# Check our guides at https://confluence.atlassian.com/x/5Q4SMw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: clangbuiltlinux/ubuntu
+
+pipelines:
+  default:
+    - step:
+        script: # Modify the commands below to build your repository.
+          - uname -a
+          - apt-get update -qq
+          - apt-get install cmake -y
+          - cmake --version
+          - clang++-9 --version
+          - mkdir build
+          - cd build
+          - export CXX=clang++-9
+          - echo $CXX
+          - CXX=clang++-9 && cmake ..
+          - make
+          - ctest
