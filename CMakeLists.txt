@@ -15,4 +15,5 @@ macro(add_exercise TESTNAME)
     add_test(NAME ${TESTNAME} COMMAND ${TESTNAME})
 endmacro()
 
+add_subdirectory( Array )
 add_subdirectory( DynamicProgramming )
